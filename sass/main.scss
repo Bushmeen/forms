@@ -1,0 +1,18 @@
+@import './colors';
+@import './nav';
+@import './heading';
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+html {
+	font-size: 65.5%;
+}
+
+body {
+	font-family: 'Quicksand', sans-serif;
+}

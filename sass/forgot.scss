@@ -1,0 +1,284 @@
+@import './colors';
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+html {
+	font-size: 65.5%;
+}
+
+body {
+	font-family: 'Quicksand', sans-serif;
+}
+.header {
+	position: relative;
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	height: 100vh;
+	.img-source {
+		position: absolute;
+		bottom: 5px;
+		left: 5px;
+		font-size: 1.2rem;
+		font-weight: 100;
+		z-index: 1000;
+
+		a {
+			color: $white;
+			text-decoration: none;
+		}
+	}
+
+	&__back {
+		position: absolute;
+		top: 20px;
+		left: 20px;
+		z-index: 100;
+		text-decoration: none;
+		color: $white;
+		font-size: 2rem;
+	}
+	&__img {
+		position: relative;
+		background-image: $gradient3;
+		background-position: center;
+		background-size: cover;
+		height: 50%;
+		width: 100%;
+		box-shadow: 0 0 5px black;
+	}
+	&__shadow {
+		position: absolute;
+		height: 100%;
+		width: 100%;
+		background-color: $shadow;
+	}
+	&__icon {
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		width: 250px;
+		height: 250px;
+	}
+	.forgot {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex-direction: column;
+		height: 50%;
+		width: 100%;
+		padding: 2em;
+		text-align: center;
+
+		&__title {
+			font-size: 2.5rem;
+			margin-bottom: 20px;
+		}
+		&__text {
+			margin-bottom: 10px;
+			padding: 0em 2em;
+			font-size: 1.4rem;
+		}
+		&__box {
+			text-align: left;
+			display: flex;
+			flex-direction: column;
+			padding: 0.4em;
+			font-size: 1.5rem;
+			width: 100%;
+			font-size: 1.5rem;
+			padding: 0.2em 2em;
+		}
+		&__error {
+			visibility: hidden;
+			color: $red;
+			font-weight: bold;
+			font-size: 1.1rem;
+			margin: 0px 10px;
+			margin-top: 4px;
+			&--active {
+				visibility: visible;
+			}
+		}
+		&__input {
+			padding: 0.6em 1em;
+			font-size: 1.5rem;
+			width: 100%;
+			border: none;
+			background-color: $blue;
+			border-radius: 10px;
+			&:focus {
+				outline: none;
+				background-color: $blue2;
+			}
+		}
+		&__label {
+			font-size: 1.5rem;
+			padding: 0 0.4em;
+			margin-bottom: 10px;
+		}
+
+		&__send {
+			margin: 20px;
+			padding: 0.8em 1em;
+			cursor: pointer;
+			border-radius: 10px;
+			border: none;
+			background-color: $blue3;
+			color: $white;
+			font-size: 1.5rem;
+			transition: background-color 0.4s;
+			&:hover {
+				background-color: $grey;
+			}
+		}
+	}
+	.popup {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		position: fixed;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -400%);
+		background-color: $blue2;
+		z-index: 1000;
+		padding: 2em;
+		border-radius: 10px;
+		box-shadow: 0 0 5px $black;
+		color: $white;
+		visibility: hidden;
+		transition: transform 0.6s, opacity 0.6s;
+		&--active {
+			visibility: visible;
+			opacity: 1;
+			transform: translate(-50%, -50%);
+		}
+		&__title {
+			font-size: 2.2rem;
+			margin-bottom: 5px;
+			text-shadow: 0 0 5px $black;
+		}
+		&__text {
+			text-shadow: 0 0 05px $black;
+			font-size: 1.2em;
+			margin-bottom: 10px;
+		}
+		&__close {
+			text-decoration: none;
+			background-color: $white;
+			padding: 1em 1.2em;
+			font-size: 1.2rem;
+			border-radius: 10px;
+			color: $black;
+			box-shadow: 0 0 5px $black;
+			cursor: pointer;
+		}
+		&__icon {
+			width: 200px;
+			height: 200px;
+		}
+	}
+}
+@media (min-width: 500px) {
+	.header {
+		.forgot {
+			&__text {
+				padding: 0 2em;
+			}
+			&__box {
+				padding: 0.2em 2em;
+			}
+		}
+	}
+}
+@media (min-width: 700px) {
+	.header {
+		&__img {
+			height: 60%;
+		}
+		&__icon {
+			height: 400px;
+			width: 400px;
+		}
+
+		.forgot {
+			&__title {
+				font-size: 5rem;
+			}
+			&__text {
+				font-size: 2rem;
+				padding: 0 6em;
+			}
+			&__box {
+				padding: 0.2em 8em;
+			}
+			&__label {
+				font-size: 2rem;
+			}
+			&__input {
+				font-size: 2rem;
+			}
+			&__send {
+				font-size: 2rem;
+			}
+		}
+	}
+}
+
+@media (min-width: 900px) {
+	.header {
+		flex-direction: row;
+		&__icon {
+			width: 500px;
+			height: 500px;
+			&::after {
+				bottom: 80px;
+			}
+		}
+		&__img {
+			height: 100%;
+			width: 50%;
+		}
+		.forgot {
+			height: 100%;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			width: 50%;
+			&__title {
+				font-size: 3rem;
+			}
+			&__text {
+				padding: 0 5em;
+				margin-bottom: 20px;
+			}
+			&__box {
+				padding: 0.2em 5em;
+			}
+		}
+		.popup {
+			padding: 8em 10em;
+			&__title {
+				font-size: 3rem;
+			}
+			&__text {
+				font-size: 1.5rem;
+			}
+			&__close {
+				font-size: 1.5rem;
+			}
+			&__icon {
+				height: 250px;
+				width: 250px;
+			}
+		}
+	}
+}

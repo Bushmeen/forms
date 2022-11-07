@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forms project</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;600&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/cf11a82493.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./css/forgot.css">
+</head>
+
+<body>
+    <header class="header">
+        <div class="header__img">
+            <p class="img-source">Icons by <a href="https://lordicon.com/" target="_blank">lordicon.com</a></p>
+            <a href="./index.html" class="header__back"><i class="fa-solid fa-arrow-left-long"></i></a>
+            <div class="header__shadow"></div>
+            <lord-icon class="header__icon" src="https://cdn.lordicon.com/cmeaanno.json" trigger="loop"
+                colors="primary:#b4b4b4,secondary:#9cc2f4">
+            </lord-icon>
+        </div>
+        <form class="forgot">
+            <h1 class="forgot__title">Oh now!</h1>
+            <p class="forgot__text">Forgot your password? Type in the email associated with your account and
+                we'll send you an email to reset it.</p>
+            <div class="forgot__box ">
+                <label class="forgot__label" for="forgotEmail">Email:</label>
+                <input class="forgot__input" type="email" id="forgotEmail" placeholder="email">
+                <p class="forgot__error">error</p>
+            </div>
+            <button class="forgot__send">Send</button>
+            <div class="popup">
+                <h3 class="popup__title">Done!</h3>
+                <p class="popup__text">we have sent a link to reset your password </p>
+                <lord-icon class="popup__icon" src="https://cdn.lordicon.com/iepbfivp.json" trigger="loop"
+                    colors="primary:#848484,secondary:#9cc2f4,tertiary:#ebe6ef">
+                </lord-icon>
+                <a href="./index.html" class="popup__close">Back to main page</a>
+            </div>
+        </form>
+    </header>
+    <script src="https://cdn.lordicon.com/qjzruarw.js"></script>
+    <script src="./js/forgot.js"></script>
+</body>
+
+</html>

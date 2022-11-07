@@ -1,0 +1,143 @@
+.main-nav {
+	display: none;
+}
+.mobile-nav {
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 1000;
+	&__items {
+		position: absolute;
+		display: flex;
+		align-items: center;
+		justify-content: flex-start;
+		flex-direction: column;
+		top: 0;
+		height: 100vh;
+		width: 60vw;
+		background-color: $white;
+		padding: 8em 2em;
+		background-position: top;
+		background-size: cover;
+		transform: translateX(-100%);
+		transition: transform 0.5s;
+		&--active {
+			transform: translate(0);
+		}
+	}
+	&__item {
+		margin: 20px 0;
+		text-align: center;
+		font-size: 1.6rem;
+		text-decoration: none;
+		color: $black;
+		font-weight: bold;
+	}
+	&__btn {
+		position: absolute;
+		top: 10px;
+		left: 10px;
+		width: 40px;
+		height: 40px;
+		border: 1px solid transparent;
+		background: none;
+		cursor: pointer;
+		z-index: 1000;
+	}
+	&__box {
+		display: flex;
+		align-items: center;
+		justify-content: space-around;
+		flex-direction: column;
+		width: 100%;
+		height: 100%;
+	}
+	&__bar {
+		width: 100%;
+		height: 3px;
+		background-color: $white;
+		opacity: 1;
+		transition: background-color 0.5s, opacity 0.5s, transform 0.5s;
+		transform-origin: left;
+		&--one {
+			background-color: $black;
+			transform: rotate(40deg);
+			transform-origin: left;
+		}
+		&--two {
+			opacity: 0;
+		}
+		&--three {
+			background-color: $black;
+			transform: rotate(-40deg);
+			transform-origin: left;
+		}
+	}
+}
+@media (min-width: 900px) {
+	.mobile-nav {
+		display: none;
+	}
+	.main-nav {
+		display: flex;
+		position: fixed;
+		top: 0;
+		left: 50%;
+		transform: translateX(-50%);
+		align-items: center;
+		justify-content: space-between;
+		width: 100%;
+		height: 80px;
+		z-index: 1000;
+		margin: 0 auto;
+		max-width: 1200px;
+		padding: 2em;
+		&--active {
+			filter: blur(2px);
+			pointer-events: none;
+		}
+		&__logo {
+			position: relative;
+			width: 40px;
+			height: 40px;
+			background-color: $purple;
+			border-radius: 50%;
+			box-shadow: 0 0 5px $black;
+			i {
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+				font-size: 25px;
+				color: $white;
+				text-shadow: 0 0 5px $black;
+			}
+		}
+		&__items {
+			font-size: 1.5rem;
+		}
+		&__item {
+			position: relative;
+			padding: 0 0.6em;
+			text-decoration: none;
+			color: $white;
+			text-shadow: 0 0 5px $black;
+
+			&::after {
+				position: absolute;
+				bottom: 0;
+				left: 0;
+				content: '';
+				width: 100%;
+				transform: scale(0);
+				transform-origin: left;
+				height: 2px;
+				background-color: $white;
+				transition: transform 0.6s;
+			}
+			&:hover::after {
+				transform: scale(1);
+			}
+		}
+	}
+}

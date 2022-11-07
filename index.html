@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forms project</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;600&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/cf11a82493.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./css/main.css">
+</head>
+
+<body>
+    <nav class="mobile-nav">
+        <button class="mobile-nav__btn">
+            <div class="mobile-nav__box">
+                <span class="mobile-nav__bar "></span>
+                <span class="mobile-nav__bar "></span>
+                <span class="mobile-nav__bar "></span>
+            </div>
+        </button>
+        <div class="mobile-nav__items">
+            <a href="#" class="mobile-nav__item">Home</a>
+            <a href="#" class="mobile-nav__item">Offers</a>
+            <a href="#" class="mobile-nav__item">More info</a>
+            <a href="#" class="mobile-nav__item">Contact</a>
+        </div>
+    </nav>
+    <nav class="main-nav">
+        <div class="main-nav__logo"><i class="fa-solid fa-mountain"></i></div>
+        <div class="main-nav__items">
+            <a href="#" class="main-nav__item">home</a>
+            <a href="#" class="main-nav__item">Offers</a>
+            <a href="#" class="main-nav__item">More info</a>
+            <a href="#" class="main-nav__item">Contact</a>
+        </div>
+    </nav>
+    <header class="header">
+        <div class="header__shadow"></div>
+        <div class="header__box">
+            <h1 class="header__title"><i class="fa-solid fa-person-hiking"></i> Travel with us </h1>
+            <p class="header__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam, adipisci!</p>
+        </div>
+        <button class="header__btn">Join now!</button>
+        <div class="popup">
+            <button class="popup__close-btn">close</button>
+            <form class="login">
+                <h3 class="popup__title">Join the world's largest community</h3>
+                <div class="login__box">
+                    <label class="login__label" for="logUsername">User name:</label>
+                    <input class="login__input" type="text" id="logUsername" placeholder="Nick">
+                </div>
+                <div class="login__box">
+                    <label class="login__label" for="logPassword">Password:</label>
+                    <input class="login__input" type="password" id="logPassword" placeholder="Password">
+                </div>
+                <a href="./forgot.html" class="login__forgot">Forgot password?</a>
+                <p class="login__error">error</p>
+                <button class="login__btn">Login</button>
+                <p class="login__create-account">or create account <a href="./newAccount.html">here</a></p>
+            </form>
+        </div>
+    </header>
+    <script src="./js/main.js"></script>
+</body>
+
+</html>
